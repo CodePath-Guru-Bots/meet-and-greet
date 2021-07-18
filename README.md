@@ -1,5 +1,5 @@
 # TF_Colab_Bot
-
+[HackMD doc](https://hackmd.io/j8FV3tJtTAisG3tzhdmZcg)
 This bot conects TF's with eachopther by starting a DM between TF's. The purpose of the bot is to promote comunity between TFs at diffrent schools. 
 
 There is 2 paths this Bot can go:
