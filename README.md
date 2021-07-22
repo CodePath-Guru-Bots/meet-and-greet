@@ -15,3 +15,7 @@ Requirments:
 - get user info eg:email, school name
 - reactions to a bot 
 - create a Dm with 2 or more users 
+
+**General Idea for meetup with no repeats**
+
+<iframe height="600px" width="100%" src="https://replit.com/@membriux/meetOnce?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
