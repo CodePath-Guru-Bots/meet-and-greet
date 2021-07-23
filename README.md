@@ -1,5 +1,6 @@
 # TF Meet and Greet Bot
 
+##### `Source` [hackmd.io/](https://hackmd.io/j8FV3tJtTAisG3tzhdmZcg)
 #### `Mission:` Build community relationships amongst TFs
 #### `Other Goals:` create serendipity, increase awareness of student's lives, learn from each other
 
@@ -42,8 +43,7 @@ Class Student
 Main Methods
 ```
 get_user_list() - so can be reused for ios and, cyb all tf
- """gets the list of users from specific 
- channel (i.e. alltf-announcement-channel)"""
+ """gets the list of users from specific user-groups (i.e. @new-ios-tfs-fall2021)"""
 
 create_group_dm()
 """ Takes in array of students and 
