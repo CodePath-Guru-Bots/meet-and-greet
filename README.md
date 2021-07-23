@@ -1,21 +1,53 @@
-# TF_Colab_Bot
-[HackMD doc](https://hackmd.io/j8FV3tJtTAisG3tzhdmZcg)
-This bot conects TF's with eachopther by starting a DM between TF's. The purpose of the bot is to promote comunity between TFs at diffrent schools. 
+# TF Meet and Greet Bot
 
-There is 2 paths this Bot can go:
-Path 1 :
-Random/non random paring of students witch only focus os to send a Dm and ask them to have a conversation/coffey chat togther 
+#### `Mission:` Build community relationships amongst TFs
+#### `Other Goals:` create serendipity, increase awareness of student's lives, learn from each other
 
-Path 2: 
-Have the bot create our Pods and those pods will be used in our TF Training. 
-If we do that we can send meessages as the bot to each Pod and give them assighments or materials. 
+[](https://)
+## Requirements
 
-Requirments:
-- Get a list of users from a slack channel 
-- get user info eg:email, school name
-- reactions to a bot 
-- create a Dm with 2 or more users 
+- Get all users from all-tf-announcements (https://api.slack.com/methods/users.list)
+- Choose 2 TFs at random from there
+- Crate a dm between those students
+- Bot will say "Welcome to CodePath's meet and greet bot. Feel free to introduce yourselves and setup a zoom chat between the two of you :)"
 
-**General Idea for meetup with no repeats**
+Bonuses
+- ✅ Do not allow people from the same school
 
-<iframe height="600px" width="100%" src="https://replit.com/@membriux/meetOnce?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+# Scope
+
+- Meeting TFs:
+    build community by havibg the TFs have a 15 min talk 
+    -zoom link
+    -calander so they can see the schedule 
+
+
+- for TF training a use case is:
+    meet other iOS TFs to increase networking 
+    
+    pods -3 people 
+    - TF training anouncments 
+    - starter projects 
+    - assign HW 
+        - turn in their project 
+
+Classes
+```
+Class Student
+ - name 
+ - userid 
+ - (maybe School) if we want to make sure matches do not have same schools 
+```
+
+Main Methods
+```
+get_user_list() - so can be reused for ios and, cyb all tf
+ """gets the list of users from specific 
+ channel (i.e. alltf-announcement-channel)"""
+
+create_group_dm()
+""" Takes in array of students and 
+creates a dm in groups of two"""
+```
+
+
