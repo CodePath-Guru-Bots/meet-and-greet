@@ -1,25 +1,43 @@
 import os
+from slack_sdk import WebClient
 from dates import get_rotation, tf_initial_date
+from get_users import get_users
+from conversations import Conversations
 
-BOT_TOKEN = os.environ['BOT_TOKEN']
-students = list('abcdefgh')
+client = WebClient(token=os.environ['BOT_TOKEN'])
 
-def create_pairs(students):
-  """ 
-  Create pairs of students will meet up this week.
-  We accomplish this by shifting the first student to the end of the line
+all_users = get_users()
+
+
+def start_conversation(user_pair: (str, str)):
+  """
+  Start conversation with a pair of users (pair = 2 users) + bot user.
+  Bot sends a welcome message to motivate students to introduce each other.
+  """
+  conversation = Conversations(client=client, user_pair=user_pair)
+  conversation.start()
+
+
+def rotate_users():
+  """
+  Rotate users so that we prevent them from meeting with the same people again.
+  We accomplish this by shifting the first student to the end of the line.
   """
   rotation = get_rotation(tf_initial_date)
-
   for n in range(rotation):
-    # Rotate meetups (i.e. shift student 'a' to the end of array)
-    students.append(students.pop(0))  
+      # Rotate meetups (i.e. shift student 'John' to the end of array)
+      all_users.append(all_users.pop(0))
 
 
-  # Create new pairs
-  pairs = [(students[x], students[-x-1]) for x in range(len(students)//2)]
-  print("\nStudents this week ->", students, "\n Meeting this week:", pairs)
+def main():
+  """
+  Create pairs of users that will meet up this week
+  """
+  pairs = [ [all_users[x], all_users[-x - 1]] for x in range(len(all_users) // 2) ]
+
+  for user_pair in pairs:
+      start_conversation(user_pair=user_pair)
+
 
 if __name__ == "__main__":
-  create_pairs(students)
-
+    main()
