@@ -1,8 +1,10 @@
 import os
 from slack_sdk import WebClient
-from dates import get_rotation, tf_initial_date
-from get_users import get_users
-from conversations import Conversations
+
+# Helper functions
+from helpers.dates import get_rotation, tf_initial_date
+from helpers.get_users import get_users
+from helpers.conversations import Conversations
 
 client = WebClient(token=os.environ['BOT_TOKEN'])
 
