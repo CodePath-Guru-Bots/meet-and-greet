@@ -5,7 +5,7 @@ from slack_sdk import WebClient
 client = WebClient(token=os.environ['BOT_TOKEN'])
 
 # Channel ID for #meet-and-greet
-channel = "C029RN7ARKM"
+channel = os.environ['CHANNEL']
 
 def get_users():
   """
