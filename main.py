@@ -7,9 +7,18 @@ from helpers.get_users import get_users
 from helpers.conversations import Conversations
 
 client = WebClient(token=os.environ['BOT_TOKEN'])
-
+rotation = get_rotation(tf_initial_date)
 all_users = get_users()
 
+def rotate(array: [str]) -> [str]:
+  """
+  Rotate users so that we prevent them from meeting with the same people again.
+  We accomplish this by shifting the first student to the end of the line.
+  """
+  for n in range(rotation):
+      # Rotate meetups (i.e. shift student 'John' to the end of array)
+      array.append(array.pop(0))
+  return array
 
 def start_conversation(user_pair: (str, str)):
   """
@@ -19,27 +28,22 @@ def start_conversation(user_pair: (str, str)):
   conversation = Conversations(client=client, user_pair=user_pair)
   conversation.start()
 
-
-def rotate_users():
-  """
-  Rotate users so that we prevent them from meeting with the same people again.
-  We accomplish this by shifting the first student to the end of the line.
-  """
-  rotation = get_rotation(tf_initial_date)
-  for n in range(rotation):
-      # Rotate meetups (i.e. shift student 'John' to the end of array)
-      all_users.append(all_users.pop(0))
-
+def create_user_pairs(array: [str]) -> [[str, str]]:
+    return [ [array[x], array[-x - 1]] for x in range(len(array) // 2) ]
 
 def main():
   """
   Create pairs of users that will meet up this week
   """
-  pairs = [ [all_users[x], all_users[-x - 1]] for x in range(len(all_users) // 2) ]
+  rotated = rotate(all_users)
+  user_pairs = create_user_pairs(rotated)
 
-  for user_pair in pairs:
+  for user_pair in user_pairs:
       start_conversation(user_pair=user_pair)
 
 
 if __name__ == "__main__":
-    main()
+  rotated = rotate(all_users)
+  user_pairs = create_user_pairs(rotated)
+  print("All users:", user_pairs)
+  main()

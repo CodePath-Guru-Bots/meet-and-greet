@@ -2,7 +2,7 @@
 from datetime import date
 
 # Can be dynamic by creating an API server
-tf_initial_date = date(2021,7,25)
+tf_initial_date = date(2021,8,2)
 
 
 def get_rotation(initial_date: date) -> int:
