@@ -1,4 +1,8 @@
 .replit
-__pycache__
 .replit
 .env
+.breakpoints
+venv
+__pycache__
+pyproject.toml
+poetry.lock
