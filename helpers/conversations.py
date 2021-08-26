@@ -16,6 +16,10 @@ class Conversations:
     self.user_pair = user_pair
 
   def start(self):
+    """
+    The bot creates a direct message bewteen two users + the bot. 
+    """
+
     try:
       conversation = self.client.conversations_open(users=self.user_pair,return_im=True)
       channel_id = conversation["channel"]["id"]
@@ -31,10 +35,6 @@ class Conversations:
     except SlackApiError as e:
       print("\nError creating conversation for {self.user_pair} \n{e}".format(e=e,self=self))
   
-  def _get_welcome_message(self):
-    with open('helpers/message_block.json') as f:
-      data = json.load(f)
-      return data['blocks']
 
   def __str__(self):
     return "User pair: {self.user_pair}".format(self=self)
