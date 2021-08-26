@@ -7,6 +7,7 @@ client = WebClient(token=os.environ['BOT_TOKEN'])
 # Channel ID for #meet-and-greet
 channel = os.environ['CHANNEL']
 
+
 def get_users():
   """
   Return list of all users in the TF user groups 

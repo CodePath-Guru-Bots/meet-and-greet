@@ -1,0 +1,27 @@
+{
+   "blocks": [
+      {
+         "type": "section",
+         "text": {
+            "type": "mrkdwn",
+            "text": "We're sorry to see you go! Feel free to join back our #meet-and-greet channel! Did you accidentally leave?"
+         }
+      },
+      {
+         "type": "actions",
+         "elements": [
+            {
+               "type": "button",
+               "style": "primary",
+               "text": {
+                  "type": "plain_text",
+                  "text": "Add me back to the channel!",
+                  "emoji": true
+               },
+               "value": "click_remove",
+               "action_id": "add"
+            }
+         ]
+      }
+   ]
+}

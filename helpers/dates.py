@@ -11,5 +11,4 @@ def get_rotation(initial_date: date) -> int:
   """
   current_date = date.today()
   weeks_since = abs(current_date - initial_date).days // 7
-  print("Weeks passed", weeks_since)
   return weeks_since

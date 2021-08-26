@@ -1,5 +1,6 @@
 import json
 from slack_sdk.errors import SlackApiError
+from blocks.blocks import get_block
 
 class Conversations:
   """"
@@ -18,7 +19,7 @@ class Conversations:
     try:
       conversation = self.client.conversations_open(users=self.user_pair,return_im=True)
       channel_id = conversation["channel"]["id"]
-      blocks = self._get_welcome_message()
+      blocks = get_block("message_block.json")
       
       self.client.chat_postMessage(
         channel=channel_id, 
