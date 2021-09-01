@@ -6,9 +6,10 @@ from helpers.dates import get_rotation, tf_initial_date
 from helpers.get_users import get_users
 from helpers.conversations import Conversations
 
+# Channel ID for #meet-and-greet
+channel = os.environ['CHANNEL']
 client = WebClient(token=os.environ['BOT_TOKEN'])
 rotation = get_rotation(tf_initial_date)
-all_users = get_users()
 
 def rotate(array: [str]) -> [str]:
   """
@@ -43,6 +44,7 @@ def main():
 
 
 if __name__ == "__main__":
+  all_users = get_users(channel)
   rotated = rotate(all_users)
   user_pairs = create_user_pairs(rotated)
   print("All users:", user_pairs)
