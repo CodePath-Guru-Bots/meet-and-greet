@@ -1,4 +1,4 @@
-name: Run Script
+name: Meet and Greet
 
 on:
   workflow_dispatch:
