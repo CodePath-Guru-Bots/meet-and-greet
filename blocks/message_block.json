@@ -4,7 +4,7 @@
          "type": "section",
          "text": {
             "type": "mrkdwn",
-            "text": "Welcome to CodePath's Meet and Greet bot 👋🏻! Every week, we pair up TFs from all courses so they can get to know each other and share their stories! Feel free to start the converstaion 💬 by introducing yourselves (i.e. what school you go to, hobbies, what inspired you to get into tech, or anything new that you learned this week)!\n\nWe also encourage you all to schedule a time to meet using calendly.com, when2meet.com, or lettucemeet.com \n\nIf you wish to not participate anymore on weekly pairing meetups, you may remove yourself by pressing the \"Remove Me\" button or by leaving the #meet-and-greet channel and the bot will stop pairing you with other TFs."
+            "text": "Welcome to CodePath's Meet and Greet bot 👋🏻! Every week, we pair up TFs from all courses so they can get to know each other and share their stories! Feel free to start the converstaion 💬 by introducing yourselves (i.e. what school you go to, hobbies, what inspired you to get into tech, or anything new that you learned this week)!\n\nWe also encourage you all to schedule a time to meet using calendly.com, when2meet.com, or lettucemeet.com \n\nIf you wish to not participate anymore on weekly pairing meetups, you may remove yourself by pressing the \"Remove Me\" button or by leaving the #meet-and-greet channel and the bot will stop pairing you with other students."
          }
       },
       {
