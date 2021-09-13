@@ -48,7 +48,11 @@ def remove_user(user):
   """
   kicked_message_block = get_block("kicked_block.json")
   # kick user from channel
-  
+  admin.conversations_kick(
+    channel=meet_greet_channel, 
+    user=user.id
+  )
+
   # Post ephemeral message
   client.chat_postEphemeral(
     user=user.id,
@@ -73,6 +77,7 @@ def add_user(user):
     channel=user.channel_from,
     text="You were added back to #meet-and-greet! Yay!"
   )
+
   return "success"
 
   
