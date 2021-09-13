@@ -21,7 +21,7 @@ class Conversations:
     """
 
     try:
-      conversation = self.client.conversations_open(users=self.user_pair,return_im=True)
+      conversation = self.client.conversations_open(users=self.user_pair)
       channel_id = conversation["channel"]["id"]
       blocks = get_block("message_block.json")
       

@@ -20,17 +20,6 @@
                },
                "value": "click_remove",
                "action_id": "remove"
-            },
-            {
-               "type": "button",
-               "style": "primary",
-               "text": {
-                  "type": "plain_text",
-                  "text": "Calendar",
-                  "emoji": true
-               },
-               "value": "click_calendar",
-               "action_id": "calendar"
             }
          ]
       }

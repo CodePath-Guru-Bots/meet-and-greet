@@ -13,5 +13,5 @@ def get_users(channel):
 
 
 if __name__ == '__main__':
-  print(get_users())
+  print(get_users(os.environ['CHANNEL']))
 

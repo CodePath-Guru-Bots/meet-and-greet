@@ -21,21 +21,31 @@ def index():
 
 @app.route("/interact", methods=["POST"])
 def interact():
-    request_data = request.form.get('payload')
-    data = json.loads(request_data)
-    action = data['actions'][0]['action_id']
-    user = User(data)
+  """
+  Handle the payload from the user depending on what action they want to do. 
+  The actions available are:
+  - Remove: remove user from meet-greet channel
+  - Add: add user to meet-greet channel
+  """
 
-    if action == 'remove':
-      return remove_user(user)
-    elif action == 'add':
-      return add_user(user)
-    else:
-      return "NOTHING HAPPENED"
+  request_data = request.form.get('payload')
+  data = json.loads(request_data)
+  action = data['actions'][0]['action_id']
+  user = User(data)
+
+  if action == 'remove':
+    return remove_user(user)
+  elif action == 'add':
+    return add_user(user)
+  else:
+    return "NOTHING HAPPENED"
 
   
 
 def remove_user(user):
+  """
+  Get user's info and remove them from the #meet-and-greet channel
+  """
   kicked_message_block = get_block("kicked_block.json")
   # kick user from channel
   
@@ -50,17 +60,20 @@ def remove_user(user):
 
 
 def add_user(user):
-    admin.conversations_invite(
-      channel=meet_greet_channel, 
-      users=[user.id]
-    )
+  """
+  Get user's info and add them from the #meet-and-greet channel
+  """
+  admin.conversations_invite(
+    channel=meet_greet_channel, 
+    users=[user.id]
+  )
 
-    client.chat_postEphemeral(
-      user=user.id,
-      channel=user.channel_from,
-      text="You were added back to #meet-and-greet! Yay!"
-    )
-    return "success"
+  client.chat_postEphemeral(
+    user=user.id,
+    channel=user.channel_from,
+    text="You were added back to #meet-and-greet! Yay!"
+  )
+  return "success"
 
   
 if __name__ == "__main__":
