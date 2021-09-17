@@ -30,9 +30,9 @@ Using Combinations (python itertools <-- google this)
 AB AC AD | BC BD | CD
 1  2  3    4  5    6
 
-- 1 AB CD     1, 6
-- 2 AC BD     2, 5
-- 3 AD BC     3, 4
+1 AB CD     1, 6
+2 AC BD     2, 5
+3 AD BC     3, 4
 ```
 
 How it should look in code
