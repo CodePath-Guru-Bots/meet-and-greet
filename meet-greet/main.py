@@ -51,7 +51,9 @@ def create_conversations(all_pairings: [[(str, str)]]):
 def main():
   initial_date = date(2021,9,13)
   rotation = get_rotation(initial_date)
+  print(rotation)
   all_users = get_users(channel)
+  print(all_users)
   user_pairs = create_user_pairs(all_users, rotation)
   create_conversations(user_pairs)
 
