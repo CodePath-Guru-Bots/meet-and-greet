@@ -1,22 +1,24 @@
-import os
-from slack_sdk import WebClient
+print("Testing workflow")
 
-client = WebClient(token=os.environ['BOT_TOKEN'])
+# import os
+# from slack_sdk import WebClient
 
-bot_id = client.api_call("auth.test")["user_id"]
+# client = WebClient(token=os.environ['BOT_TOKEN'])
 
-print("Bot id:", bot_id)
+# bot_id = client.api_call("auth.test")["user_id"]
 
-user_pair = ['U014YGS282Y', 'UDT3NN32B']
+# print("Bot id:", bot_id)
 
-print(user_pair)
+# user_pair = ['U014YGS282Y', 'UDT3NN32B']
 
-conversation = client.conversations_open(users=user_pair,return_im=True)
-print(conversation)
-channel_id = conversation["channel"]["id"]
-text = "New test"
+# print(user_pair)
 
-client.chat_postMessage(
-  channel=channel_id, 
-  text=text
-)
+# conversation = client.conversations_open(users=user_pair,return_im=True)
+# print(conversation)
+# channel_id = conversation["channel"]["id"]
+# text = "New test"
+
+# client.chat_postMessage(
+#   channel=channel_id, 
+#   text=text
+# )
