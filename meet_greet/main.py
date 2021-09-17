@@ -45,17 +45,15 @@ def create_conversations(all_pairings: [[(str, str)]]):
   Start conversation with user pairs of users that will meet up this week
   """
   for user_pair in all_pairings:
-    print("starting user pair convo")
     start_conversation(user_pair=user_pair)
 
 def main():
   initial_date = date(2021,9,13)
   rotation = get_rotation(initial_date)
-  print(rotation)
   all_users = get_users(channel)
-  print(all_users)
   user_pairs = create_user_pairs(all_users, rotation)
-  create_conversations(user_pairs)
+  print(user_pairs)
+  # create_conversations(user_pairs)
 
 # def test():
 #   users = list("ABCDEFG")
