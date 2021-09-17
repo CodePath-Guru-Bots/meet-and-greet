@@ -32,7 +32,7 @@ jobs:
       #   run: |
       #     pytest
       - name: Run Meet and Greet Bot Script
-        run: pwd && cd meet-greet && python main.py
+        run: pwd
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHANNEL: ${{ secrets.CHANNEL }}
