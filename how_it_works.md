@@ -54,7 +54,6 @@ How it should look in code
 
 ```
 AB AC AD AE AF | BC BD BE BF | CD CE CF | DE DF | EF
-
 1  2  3  4  5     6  7  8 9    10 11 12   13 14   15
 
 
