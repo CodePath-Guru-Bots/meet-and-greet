@@ -1,6 +1,7 @@
 
 # Python Libraries
 import os
+import threading
 from datetime import date
 from itertools import combinations, chain
 
@@ -44,7 +45,8 @@ def create_conversations(all_pairings: [[(str, str)]]):
   Start conversation with user pairs of users that will meet up this week
   """
   for user_pair in all_pairings:
-      start_conversation(user_pair=user_pair)
+    print("starting user pair convo")
+    start_conversation(user_pair=user_pair)
 
 def main():
   initial_date = date(2021,9,13)
